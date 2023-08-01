@@ -25,14 +25,18 @@ function App() {
         <Route index element={<LandinPage/>}/>
 
         <Route path='/' element={<Auth/>}>
+          {/* ----Rutas Outlet----- */}
           <Route path='login' element={<Login/>}/>
           <Route path='register' element={<Register/>}/>
           <Route path='forgot/:id' element={<Forgot/>}/>
           <Route path='confirmar/:token' element={<Confirmar/>}/>
+          {/* Se ejecuta el error 404 comunmente */}
           <Route path='*' element={<NotFound />} />
         </Route>
 
         <Route path='/dashboard' element={<Dashboard/>}>
+          {/* ----Rutas Outlet----- */}
+          {/* Componente cargado por Default */}
           <Route index element={<Perfil/>}/>
           <Route path='listar' element={<Listar/>}/>
           <Route path='visualizar/:id' element={<Visualizar/>}/>
